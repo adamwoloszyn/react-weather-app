@@ -1,0 +1,18 @@
+runtime: nodejs16
+
+service: react-weather-app
+
+handlers:
+  - url: /static
+    static_dir: build/static
+
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+
+  - url: /(.*)
+    static_files: build/index.html
+    upload: build/index.html
+
+env_variables:
+  REACT_APP_API_KEY: "ca49d5d57702bddcbc9093265138e8fa"
